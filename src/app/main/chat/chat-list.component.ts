@@ -16,8 +16,6 @@ export class ChatListComponent implements OnInit{
    this.chatService.getChats().subscribe((chats: ChatInterface[]) =>{
       this.chatList = chats;
    });
-
-   this.chatList = this.chatService.getTempList();
   }
 
 }

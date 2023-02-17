@@ -25,6 +25,7 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     RouterModule.forRoot([
       {path: "login", component:LoginComponent},
       {path: "register", component:RegisterComponent},
+      
       {path: "", redirectTo: "login",pathMatch: "full"},
       {path: "**", component:NotFoundPageComponent},
 

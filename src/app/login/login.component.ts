@@ -23,8 +23,7 @@ export class LoginComponent {
     this.filtredUser = this.LoginService.getUser();
     for(let selected of this.filtredUser){
       if(selected.username == this.loginForm.get('username')?.value && selected.password == this.loginForm.get('password')?.value ){
-        console.log('Username' + this.loginForm.get('username')?.value);
-        console.log(this.loginForm.get('password')?.value);
+        this.router.navigate(['/chat']);
         console.log("logged");
 
       }else{
