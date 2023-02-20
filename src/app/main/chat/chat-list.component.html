@@ -1,4 +1,4 @@
-<div  *ngFor="let chat of chatList" style="margin-bottom: 4px; background-color: #0a53b3; border-bottom: 1px solid black; border-top: 1px solid black; display: flex;">
+<div class="chatlist" *ngFor="let chat of chatList">
 
   <div class="col-sm-auto">
     <img src="{{chat.imgLink}}" style="width: 50px; margin: 10px;" >
@@ -14,7 +14,7 @@
     </div>
 
   </div>
-  
+
   <div class="col-sm-auto my-auto" style="color: white; margin-right: 10px;">
     {{chat.lastMessageUnixTime | unixToTimestamp}}
   </div>

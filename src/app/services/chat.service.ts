@@ -8,7 +8,7 @@ import { ChatInterface } from "../models/chatInterface";
 })
 export class ChatService{
 
-    private chatUrl: string = "api/chats/chats.json";
+    private chatUrl: string = "/api/chats/chats.json";
 
     constructor(private http: HttpClient){}
 

@@ -4,6 +4,7 @@ import { ChatModule } from './chat/chat.module';
 import { MainComponent } from './main.component';
 import { SearchBarComponent } from './chat/searchBar/search-bar.component';
 import { RouterModule } from '@angular/router';
+import { MessageModule } from '../message/message.module';
 
 
 
@@ -14,10 +15,12 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ChatModule,
+    MessageModule,
     RouterModule.forChild([
       {path: "chat", component:MainComponent},
       {path: "chat/:id",
-      component: MainComponent
+      component: MainComponent,
+
     },
     ]),
   ],

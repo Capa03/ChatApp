@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { User } from './User';
+import { User } from '../models/User';
 import { Observable, catchError, tap, throwError} from 'rxjs';
 
 @Injectable({
@@ -9,16 +9,10 @@ import { Observable, catchError, tap, throwError} from 'rxjs';
 export class LoginService {
   user:User[] = [];
 constructor(private http: HttpClient) { }
-private api = "../login/user.json"
+private api = "/api/users/users.json"
 
-getUser(): User[]{
-  return this.user = [
-    {
-      "username": "David",
-      "password": "123456"
-    }
-  ]
-
+getUser(): Observable<User[]>{
+ return this.http.get<User[]>(this.api);
 }
 
 private handleError(err: HttpErrorResponse): Observable<never> {
