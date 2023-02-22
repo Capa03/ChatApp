@@ -20,7 +20,6 @@ import { MessageModule } from '../message/message.module';
       {path: "chat", component:MainComponent},
       {path: "chat/:id",
       component: MainComponent,
-
     },
     ]),
   ],

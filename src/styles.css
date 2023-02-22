@@ -3,7 +3,7 @@
 @import "~font-awesome/css/font-awesome.min.css";
 
 * {
-  outline: 1px solid #f00 !important;
+  /*outline: 1px solid #f00 !important;*/
   opacity: 1 !important;
   visibility: visible !important;
 }

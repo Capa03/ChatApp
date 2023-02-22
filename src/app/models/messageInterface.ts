@@ -2,6 +2,7 @@ export interface MessageInterface
 {
   messageId: number;
   chatId: number;
-  name: string;
-  imgLink: string;
+  content: string;
+  unixTime: string;
+  sent:boolean;
 }

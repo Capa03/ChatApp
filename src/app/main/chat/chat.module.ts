@@ -4,6 +4,7 @@ import { ChatListComponent } from './chat-list.component';
 import { SearchBarComponent } from './searchBar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SharedModule } from '../../shared/shared.module';
     SearchBarComponent,
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports:[
     ChatListComponent,

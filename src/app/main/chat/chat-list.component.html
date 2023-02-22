@@ -1,22 +1,20 @@
-<div class="chatlist" *ngFor="let chat of chatList">
-
-  <div class="col-sm-auto">
-    <img src="{{chat.imgLink}}" style="width: 50px; margin: 10px;" >
-  </div>
-
-  <div class="col my-auto" >
-    <div class="row" style="color: white; font-weight: bold; width: 100%; margin-left: 10px;">
-      {{chat.chatName}}
+<div class="chatlist" *ngFor="let chat of chatList " (click)="this.onChatClicked(chat.chatId)">
+    <div class="col-sm-auto">
+      <img src="{{chat.imgLink}}" style="width: 50px; margin: 10px;">
     </div>
 
-    <div class="row" style="color: white; width: 100%; margin-left: 10px;">
-      {{chat.lastMessageContent}}
+    <div class="col my-auto">
+      <div class="row" style="color: white; font-weight: bold; width: 100%; margin-left: 10px;">
+        {{chat.chatName}}
+      </div>
+
+      <div class="row" style="color: white; width: 100%; margin-left: 10px;">
+        {{chat.lastMessageContent}}
+      </div>
+
     </div>
 
-  </div>
-
-  <div class="col-sm-auto my-auto" style="color: white; margin-right: 10px;">
-    {{chat.lastMessageUnixTime | unixToTimestamp}}
-  </div>
-
+    <div class="col-sm-auto my-auto" style="color: white; margin-right: 10px;">
+      {{chat.lastMessageUnixTime | unixToTimestamp}}
+    </div>
 </div>

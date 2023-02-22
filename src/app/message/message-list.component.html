@@ -1,56 +1,26 @@
-
+<div *ngIf="chat">
   <div class="TopBar">
     <div class="" style="height: 100%;">
-      <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" class="imageTopbar" >
+      <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" class="imageTopbar">
     </div>
+    <p>{{chat.chatName}}</p>
   </div>
-<div style="overflow-y: scroll;">
-  <div class="container">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" alt="Avatar">
-    <p>Hello. How are you today?</p>
-    <span class="time-right">11:00</span>
-  </div>
+  <div style="overflow-y: scroll; height: 80vh">
+    <div *ngFor="let message of messageList" >
+      <div *ngIf="!message.sent" style="overflow-y: hidden;">
+        <div class="container left">
+          <p>{{message.content}}</p>
+          <span class="time-right">{{message.unixTime | unixToTimestamp}}</span>
+        </div>
+      </div>
+      <div *ngIf="message.sent">
+        <div class="container darker right">
 
-  <div class="container darker">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" alt="Avatar" class="right">
-    <p>Hey! I'm fine. Thanks for asking!</p>
-    <span class="time-left">11:01</span>
-  </div>
-
-  <div class="container">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" alt="Avatar">
-    <p>Hello. How are you today?</p>
-    <span class="time-right">11:00</span>
-  </div>
-
-  <div class="container darker">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" alt="Avatar" class="right">
-    <p>Hey! I'm fine. Thanks for asking!</p>
-    <span class="time-left">11:01</span>
-  </div>
-
-  <div class="container">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" alt="Avatar">
-    <p>Hello. How are you today?</p>
-    <span class="time-right">11:00</span>
-  </div>
-
-  <div class="container darker">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" alt="Avatar" class="right">
-    <p>Hey! I'm fine. Thanks for asking!</p>
-    <span class="time-left">11:01</span>
-  </div>
-
-  <div class="container">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" alt="Avatar">
-    <p>Hello. How are you today?</p>
-    <span class="time-right">11:00</span>
-  </div>
-
-  <div class="container darker">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_258083.png" alt="Avatar" class="right">
-    <p>Hey! I'm fine. Thanks for asking!</p>
-    <span class="time-left">11:01</span>
+          <p>{{message.content}}</p>
+          <span class="time-left">{{message.unixTime | unixToTimestamp}}</span>
+        </div>
+      </div>
+    </div>
   </div>
 
 
